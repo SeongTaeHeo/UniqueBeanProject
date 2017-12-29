@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -419,21 +423,21 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input class="form-control" id="name" type="text" placeholder="Your Name *" required data-validation-required-message="Please enter your name.">
+                    <input class="form-control" id="name" type="text" placeholder="이름 *" required data-validation-required-message="이름은 필수입력사항입니다.">
                     <p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group">
-                    <input class="form-control" id="email" type="email" placeholder="Your Email *" required data-validation-required-message="Please enter your email address.">
+                    <input class="form-control" id="email" type="email" placeholder="이메일*" required data-validation-required-message="이메일은 필수입력사항입니다.">
                     <p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group">
-                    <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required data-validation-required-message="Please enter your phone number.">
+                    <input class="form-control" id="pnum" type="pnum" placeholder="주문번호*" required data-validation-required-message="전화번호는 필수입력사항입니다.">
                     <p class="help-block text-danger"></p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <textarea class="form-control" id="message" placeholder="Your Message *" required data-validation-required-message="Please enter a message."></textarea>
+                    <textarea class="form-control" id="message" placeholder="문의 내용을 입력하세요*" required data-validation-required-message="상세 문의사항을 입력하세요"></textarea>
                     <p class="help-block text-danger"></p>
                   </div>
                 </div>
