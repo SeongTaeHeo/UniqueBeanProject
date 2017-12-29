@@ -34,8 +34,6 @@
 	}finally{
 		if (rs != null) try { rs.close(); } catch(SQLException e) {}
 		if (stmt != null) try { stmt.close(); } catch(SQLException e) {}
-		
-		// 7. 커넥션 종료
 		if (conn != null) try { conn.close(); } catch(SQLException e) {}
 	}
 %>
@@ -52,24 +50,20 @@
 
     <title>Unique Bean</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
-    <!-- Custom styles for this template -->
     <link href="css/agency.min.css" rel="stylesheet">
 
   </head>
 
   <body id="page-top">
 
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">UniqueBean</a>
@@ -99,7 +93,6 @@
       </div>
     </nav>
 
-    <!-- Header -->
     <header class="masthead">
       <div class="container">
         <div class="intro-text">
@@ -110,7 +103,6 @@
       </div>
     </header>
 
-    <!-- Services -->
     <section id="services">
       <div class="container">
         <div class="row">
@@ -148,7 +140,6 @@
       </div>
     </section>
 
-    <!-- Portfolio Grid -->
     <section class="bg-light" id="portfolio">
       <div class="container">
         <div class="row">
@@ -246,7 +237,6 @@
       </div>
     </section>
 
-    <!-- About -->
     <section id="about">
       <div class="container">
         <div class="row">
@@ -327,7 +317,6 @@
       </div>
     </section>
 
-    <!-- Team -->
     <section class="bg-light" id="team">
       <div class="container">
         <div class="row">
@@ -418,7 +407,6 @@
       </div>
     </section>
 
-    <!-- Clients -->
     <section class="py-5">
       <div class="container">
         <div class="row">
@@ -446,7 +434,6 @@
       </div>
     </section>
 
-    <!-- Contact -->
     <section id="contact">
       <div class="container">
         <div class="row">
@@ -491,12 +478,11 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer>
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <span class="copyright">Copyright &copy; Your Website 2017</span>
+            <span class="copyright">Copyright &copy; UniqueBean 2017</span>
           </div>
           <div class="col-md-4">
             <ul class="list-inline social-buttons">
@@ -531,9 +517,6 @@
       </div>
     </footer>
 
-    <!-- Portfolio Modals -->
-
-    <!-- Modal 1 -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -601,7 +584,6 @@
       </div>
     </div>
 
-    <!-- Modal 3 -->
     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -635,7 +617,6 @@
       </div>
     </div>
 
-    <!-- Modal 4 -->
     <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -669,7 +650,6 @@
       </div>
     </div>
 
-    <!-- Modal 5 -->
     <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -703,7 +683,6 @@
       </div>
     </div>
 
-    <!-- Modal 6 -->
     <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -737,18 +716,14 @@
       </div>
     </div>
 
-    <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Contact form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
 
-    <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
 
   </body>
