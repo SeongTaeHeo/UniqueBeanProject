@@ -1,3 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>	
+<%
+	Connection conn=null;
+	Statement stmt=null;
+	ResultSet rs=null;
+	
+	try{
+		String jdbcDriver="jdbc:mysql://192.168.1.6:3306/UniqueBean?"+
+								"useUnicode=true&characterEncoding=utf8";
+		String dbUser="uniquebean";
+		String dbPass="uniquebean";
+		
+		String Cname,Cemail,Cpnum,Cmessage;
+		
+		Cname=request.getParameter("name");
+		Cemail=request.getParameter("email");
+		Cpnum=request.getParameter("pnum");
+		Cmessage=request.getParameter("message");
+		
+		String query="insert into contact values('"+Cname+"','"+Cemail+"','"+Cpnum+"','"+Cmessage+"')";
+		conn=DriverManager.getConnection(jdbcDriver,dbUser,dbPass);
+		
+		stmt=conn.createStatement();
+		
+		rs=stmt.executeQuery(query);
+	}catch(SQLException e){
+		e.printStackTrace();
+	}finally{
+		if (rs != null) try { rs.close(); } catch(SQLException e) {}
+		if (stmt != null) try { stmt.close(); } catch(SQLException e) {}
+		if (conn != null) try { conn.close(); } catch(SQLException e) {}
+	}
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,29 +48,25 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>Unique Bean</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
-    <!-- Custom styles for this template -->
     <link href="css/agency.min.css" rel="stylesheet">
 
   </head>
 
   <body id="page-top">
 
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">UniqueBean</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -57,7 +93,6 @@
       </div>
     </nav>
 
-    <!-- Header -->
     <header class="masthead">
       <div class="container">
         <div class="intro-text">
@@ -68,7 +103,6 @@
       </div>
     </header>
 
-    <!-- Services -->
     <section id="services">
       <div class="container">
         <div class="row">
@@ -106,7 +140,6 @@
       </div>
     </section>
 
-    <!-- Portfolio Grid -->
     <section class="bg-light" id="portfolio">
       <div class="container">
         <div class="row">
@@ -204,7 +237,6 @@
       </div>
     </section>
 
-    <!-- About -->
     <section id="about">
       <div class="container">
         <div class="row">
@@ -285,7 +317,6 @@
       </div>
     </section>
 
-    <!-- Team -->
     <section class="bg-light" id="team">
       <div class="container">
         <div class="row">
@@ -376,7 +407,6 @@
       </div>
     </section>
 
-    <!-- Clients -->
     <section class="py-5">
       <div class="container">
         <div class="row">
@@ -404,13 +434,12 @@
       </div>
     </section>
 
-    <!-- Contact -->
     <section id="contact">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Contact Us</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h3 class="section-subheading text-muted">문의사항을 남겨주시면 답변 드리겠습니다.</h3>
           </div>
         </div>
         <div class="row">
@@ -419,21 +448,21 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input class="form-control" id="name" type="text" placeholder="Your Name *" required data-validation-required-message="Please enter your name.">
+                    <input class="form-control" id="name" type="text" placeholder="이름 *" required data-validation-required-message="이름은 필수입력사항입니다.">
                     <p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group">
-                    <input class="form-control" id="email" type="email" placeholder="Your Email *" required data-validation-required-message="Please enter your email address.">
+                    <input class="form-control" id="email" type="email" placeholder="이메일*" required data-validation-required-message="이메일은 필수입력사항입니다.">
                     <p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group">
-                    <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required data-validation-required-message="Please enter your phone number.">
+                    <input class="form-control" id="pnum" type="pnum" placeholder="주문번호*" required data-validation-required-message="전화번호는 필수입력사항입니다.">
                     <p class="help-block text-danger"></p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <textarea class="form-control" id="message" placeholder="Your Message *" required data-validation-required-message="Please enter a message."></textarea>
+                    <textarea class="form-control" id="message" placeholder="문의 내용을 입력하세요*" required data-validation-required-message="상세 문의사항을 입력하세요"></textarea>
                     <p class="help-block text-danger"></p>
                   </div>
                 </div>
@@ -449,12 +478,11 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer>
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <span class="copyright">Copyright &copy; Your Website 2017</span>
+            <span class="copyright">Copyright &copy; UniqueBean 2017</span>
           </div>
           <div class="col-md-4">
             <ul class="list-inline social-buttons">
@@ -489,9 +517,6 @@
       </div>
     </footer>
 
-    <!-- Portfolio Modals -->
-
-    <!-- Modal 1 -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -559,7 +584,6 @@
       </div>
     </div>
 
-    <!-- Modal 3 -->
     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -593,7 +617,6 @@
       </div>
     </div>
 
-    <!-- Modal 4 -->
     <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -627,7 +650,6 @@
       </div>
     </div>
 
-    <!-- Modal 5 -->
     <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -661,7 +683,6 @@
       </div>
     </div>
 
-    <!-- Modal 6 -->
     <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -695,18 +716,14 @@
       </div>
     </div>
 
-    <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Contact form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
 
-    <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
 
   </body>
