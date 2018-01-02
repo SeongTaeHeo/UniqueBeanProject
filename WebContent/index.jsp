@@ -1,43 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="java.sql.SQLException"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
-<%
-	Connection conn=null;
-	Statement stmt=null;
-	ResultSet rs=null;
-	
-	try{
-		String jdbcDriver="jdbc:mysql://192.168.1.6:3306/UniqueBean?"+
-								"useUnicode=true&characterEncoding=utf8";
-		String dbUser="uniquebean";
-		String dbPass="uniquebean";
-		
-		String Cname,Cemail,Cpnum,Cmessage;
-		
-		Cname=request.getParameter("name");
-		Cemail=request.getParameter("email");
-		Cpnum=request.getParameter("pnum");
-		Cmessage=request.getParameter("message");
-		
-		String query="insert into contact values('"+Cname+"','"+Cemail+"','"+Cpnum+"','"+Cmessage+"')";
-		conn=DriverManager.getConnection(jdbcDriver,dbUser,dbPass);
-		
-		stmt=conn.createStatement();
-		
-		rs=stmt.executeQuery(query);
-	}catch(SQLException e){
-		e.printStackTrace();
-	}finally{
-		if (rs != null) try { rs.close(); } catch(SQLException e) {}
-		if (stmt != null) try { stmt.close(); } catch(SQLException e) {}
-		if (conn != null) try { conn.close(); } catch(SQLException e) {}
-	}
-%>
-
 <!DOCTYPE html>
 <html lang="en">
 
