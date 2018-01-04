@@ -1,16 +1,58 @@
 @charset "EUC-KR";
-
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+/* index.jsp 페이지에서 사용함 */
 .card-form {
 	width: 500px;
 	margin-bottom: 20px;
-	margin-left:30px;
+	margin-left: 30px;
 	float: left;
 }
 
-.center{
+.text-center {
 	text-align: center;
 }
 
 .row-form {
-	clear:both;
+	clear: both;
 }
+
+.board_header_blank {
+	width: 100%;
+	height: 200px;
+}
+
+.board_main {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.board_no {
+	width: 100px;
+}
+
+.board_title {
+	width: 800px;
+}
+
+.board_write {
+	width: 200px;
+}
+
+.board_date {
+	width: 300px;
+}
+
+#kind_table {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#kind_th {
+	color: #fff;
+	background-color: #fed136;
+}
+
+#modal_p {
+	text-align: left;
+}
+
