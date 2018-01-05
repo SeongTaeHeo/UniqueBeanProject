@@ -34,17 +34,24 @@
 </head>
 <body id="board_body">
 
-	<jsp:include page="top_menu.jsp"/>
+	<jsp:include page="top_menu.jsp" />
 
-	
-	<div class="board_header_blank"></div>
+	<header class="masthead">
+		<div class="container">
+			<div class="intro-text">
+			</div>
+		</div>
+	</header>
+
+	<div class="board_header_blank">리뷰 게시판</div>
 
 	<div class="board_main">
-		<table class="bg-light table table-hover table-sm text-center form-radius">
+		<table
+			class="bg-light table table-hover table-sm text-center form-radius">
 			<thead>
 				<tr>
 					<th class="board_no">글 번호</th>
-					<th class="board_title">제  목</th>
+					<th class="board_title">제 목</th>
 					<th class="board_write">작성자</th>
 					<th class="board_date">작성일</th>
 				</tr>
@@ -65,14 +72,13 @@
 			</tbody>
 		</table>
 		<div>
-			<button type="button" class="btn btn-success" style="margin-left:20px;">글 작성</button>
+			<button type="button" class="btn btn-success"
+				style="margin-left: 20px;">글 작성</button>
 		</div>
-		
+
 	</div>
-	
-	
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
