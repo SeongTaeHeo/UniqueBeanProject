@@ -898,7 +898,7 @@
 							<input id="lost_email" class="form-control" type="text"
 								placeholder="e-mail" required>
 						</div>
-						<div class="modal-footer">
+						<div class="">
 							<div>
 								<button type="submit" class="btn btn-primary btn-lg btn-block">전송</button>
 							</div>
